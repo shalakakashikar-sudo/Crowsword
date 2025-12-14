@@ -1,0 +1,5 @@
+{
+  "name": "Crowsword",
+  "description": "A witty, adaptive crossword puzzle game featuring a sassy crow mascot. Runs entirely in-browser with dynamic puzzle generation.",
+  "requestFramePermissions": []
+}
