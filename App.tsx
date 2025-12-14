@@ -268,15 +268,15 @@ export default function App() {
               <div className="fixed inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-neutral-800 to-neutral-950 -z-10"></div>
               
               <div className="flex flex-col items-center py-10 w-full max-w-lg mx-auto">
-                <div className="mb-20 mt-8 scale-150 cursor-pointer relative" onClick={handleLandingMascotClick}>
+                <div className="mb-36 mt-12 scale-150 cursor-pointer relative z-20" onClick={handleLandingMascotClick}>
                     <Mascot mood={mascotMood === 'IDLE' ? 'HAPPY' : mascotMood} alignment="landing" onClick={handleLandingMascotClick} />
                 </div>
                 
-                <h1 className="text-5xl md:text-7xl font-display font-black text-transparent bg-clip-text bg-gradient-to-br from-yellow-400 to-yellow-600 mb-6 drop-shadow-lg text-center z-10">
+                <h1 className="text-5xl md:text-7xl font-display font-black text-transparent bg-clip-text bg-gradient-to-br from-yellow-400 to-yellow-600 mb-6 drop-shadow-lg text-center z-10 relative">
                     CROWSWORD
                 </h1>
                 <p className="text-neutral-400 mb-12 text-center max-w-md z-10 leading-relaxed px-4">
-                    A crossword game where you get roasted by a bird. Test your vocabulary, earn shiny trash, and try not to embarrass yourself in front of the mascot.
+                    A crossword game where you get roasted by a bird. Solve puzzles, earn shiny things, and try not to cry when you forget how to spell "banana".
                 </p>
 
                 <div className="flex flex-col gap-4 w-full max-w-xs z-10">
@@ -456,3 +456,4 @@ export default function App() {
     </div>
   );
 }
+
