@@ -268,7 +268,8 @@ export default function App() {
               <div className="fixed inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-neutral-800 to-neutral-950 -z-10"></div>
               
               <div className="flex flex-col items-center py-10 w-full max-w-lg mx-auto">
-                <div className="mb-36 mt-12 scale-150 cursor-pointer relative z-20" onClick={handleLandingMascotClick}>
+                {/* INCREASED MARGIN HERE: mb-64 */}
+                <div className="mb-64 mt-12 scale-150 cursor-pointer relative z-20" onClick={handleLandingMascotClick}>
                     <Mascot mood={mascotMood === 'IDLE' ? 'HAPPY' : mascotMood} alignment="landing" onClick={handleLandingMascotClick} />
                 </div>
                 
