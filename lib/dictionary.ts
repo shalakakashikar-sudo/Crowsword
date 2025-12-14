@@ -9,6 +9,7 @@ import { VERBS } from './dictionaries/verbs';
 import { ADJECTIVES } from './dictionaries/adjectives';
 import { GENERAL } from './dictionaries/general';
 import { NCERT_WORDS } from './dictionaries/ncert';
+import { EXPANDED } from './dictionaries/expanded';
 
 export const DICTIONARY: DictionaryEntry[] = [
   ...ANIMALS,
@@ -19,5 +20,6 @@ export const DICTIONARY: DictionaryEntry[] = [
   ...VERBS,
   ...ADJECTIVES,
   ...GENERAL,
-  ...NCERT_WORDS
+  ...NCERT_WORDS,
+  ...EXPANDED
 ];
