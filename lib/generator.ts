@@ -90,8 +90,21 @@ export function generateCrossword(difficulty: Difficulty): { grid: Grid; words: 
   const size = GRID_SIZES[difficulty];
   const targetWordCount = MIN_WORDS[difficulty];
   
+  // Filter Dictionary based on difficulty
+  // - Easy: Only Easy words + generic words (no difficulty set)
+  // - Medium: Easy + Medium + generic. No Hard.
+  // - Hard: Everything.
+  let pool = DICTIONARY;
+  
+  if (difficulty === Difficulty.EASY) {
+      pool = DICTIONARY.filter(e => !e.difficulty || e.difficulty === Difficulty.EASY);
+  } else if (difficulty === Difficulty.MEDIUM) {
+      pool = DICTIONARY.filter(e => !e.difficulty || e.difficulty === Difficulty.EASY || e.difficulty === Difficulty.MEDIUM);
+  }
+  // Hard uses all words
+
   // Shuffle dictionary
-  const shuffledDict = [...DICTIONARY].sort(() => 0.5 - Math.random());
+  const shuffledDict = [...pool].sort(() => 0.5 - Math.random());
   
   let bestGrid: string[][] = createEmptyGrid(size);
   let bestWords: WordPosition[] = [];
@@ -103,6 +116,9 @@ export function generateCrossword(difficulty: Difficulty): { grid: Grid; words: 
     const tempGrid = createEmptyGrid(size);
     const tempWords: WordPosition[] = [];
     const placedWords = new Set<string>();
+    
+    // Safety check if dictionary is empty (unlikely)
+    if (shuffledDict.length === 0) break;
 
     // Place first word in the middle
     const firstWordEntry = shuffledDict[Math.floor(Math.random() * shuffledDict.length)];

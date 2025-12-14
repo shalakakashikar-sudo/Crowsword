@@ -46,4 +46,5 @@ export type MascotMood = 'IDLE' | 'HAPPY' | 'ANGRY' | 'MOCKING' | 'THINKING' | '
 export interface DictionaryEntry {
   word: string;
   clue: string;
+  difficulty?: Difficulty;
 }
