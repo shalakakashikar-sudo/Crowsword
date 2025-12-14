@@ -107,10 +107,9 @@ export const Mascot: React.FC<MascotProps> = ({ mood, onClick, alignment = 'head
 
   // Determine speech bubble styles
   // Landing Desktop: Far right (230% from left edge of container)
-  // Landing Mobile: Far below (180% from top edge)
-  // Note: Parent scale affects visual distance, so these percentage values result in large gaps.
+  // Landing Mobile: Centered below (140% from top edge)
   const bubbleStyles = alignment === 'landing'
-    ? "md:left-[230%] md:top-1/2 md:-translate-y-1/2 md:origin-left left-1/2 -translate-x-1/2 top-[180%] origin-top"
+    ? "md:left-[230%] md:top-1/2 md:-translate-y-1/2 md:origin-left left-1/2 -translate-x-1/2 top-[140%] origin-top"
     : "top-full right-full mr-2 mt-2 origin-top-right";
 
   // Border radius logic to make the "tail" look attached
@@ -221,3 +220,4 @@ export const Mascot: React.FC<MascotProps> = ({ mood, onClick, alignment = 'head
     </div>
   );
 };
+
